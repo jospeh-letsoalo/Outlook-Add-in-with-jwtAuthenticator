@@ -1,0 +1,18 @@
+
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=host.docker.internal
+      - DB_USER=root
+      - DB_PASSWORD=
+      - DB_NAME=hico_assessment
+      - DB_PORT=3306 
+    extra_hosts:
+      - "host.docker.internal:host-gateway" # For Linux only
+    restart: unless-stopped
