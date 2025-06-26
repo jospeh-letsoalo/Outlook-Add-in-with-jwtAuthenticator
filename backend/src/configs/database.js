@@ -2,7 +2,8 @@ const mysql = require('mysql');
 
 // Create connection pool
 const connection = mysql.createPool({
-  host: 'localhost',
+ // host: 'localhost',
+  host: 'host.docker.internal',
   user: 'root',
   password: '', // Update if needed
   database: 'hico_assessment',
